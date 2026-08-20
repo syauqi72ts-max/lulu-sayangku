@@ -2,94 +2,1436 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta name="theme-color" content="#b32b55">
+<meta name="description" content="Sebuah cerita kecil untuk Lulu ❤️">
+
 <title>Untuk Lulu ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:Poppins,sans-serif;background:#fff7f8;color:#45242d;overflow-x:hidden}
-#hearts{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}.heart{position:absolute;bottom:-40px;animation:float linear forwards;opacity:.8}
-@keyframes float{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;background:radial-gradient(circle at 50% 15%,#fff,#ffe5eb 55%,#f5b6c7)}
-.hero-card{max-width:760px;animation:up 1.2s ease}.kicker{letter-spacing:4px;text-transform:uppercase;font-size:12px;opacity:.7}
-h1{font-family:"Great Vibes",cursive;font-size:clamp(72px,15vw,145px);font-weight:400;color:#b32b55;margin:10px 0}
-.hero p{font-size:17px;line-height:1.9;max-width:600px;margin:auto}
-.btn{display:inline-block;margin-top:28px;padding:14px 25px;border:0;border-radius:999px;background:#b32b55;color:white;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 12px 35px #8f1f431f;transition:.25s}.btn:hover{transform:translateY(-3px) scale(1.02)}
-section{max-width:1000px;margin:auto;padding:90px 22px}.title{text-align:center;margin-bottom:42px}.title h2{font-family:"Great Vibes",cursive;font-size:60px;font-weight:400;color:#b32b55}.title p{opacity:.7;margin-top:5px}
-.card{background:#fff;border-radius:28px;padding:34px;box-shadow:0 18px 55px #7d273817}.letter{line-height:2;font-size:15.5px}.letter p{margin-bottom:15px}
-.story{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.story img{width:100%;border-radius:28px;display:block;box-shadow:0 18px 50px #7d27382a}.story-text{line-height:2}.date{display:inline-block;background:#ffe0e7;color:#a32149;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:14px}
-.timeline{border-left:3px solid #e9a4b6;margin-left:20px;padding-left:25px}.event{background:white;border-radius:20px;padding:22px;margin-bottom:20px;box-shadow:0 12px 35px #7d273814}.event b{color:#b32b55}
-.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.reason{background:#fff;border-radius:22px;padding:25px;text-align:center;box-shadow:0 12px 35px #7d273814}.emoji{font-size:34px;margin-bottom:12px}
-.music{background:linear-gradient(145deg,#8e1f45,#c53d67);color:#fff;border-radius:28px;padding:35px;text-align:center;box-shadow:0 20px 55px #7d27382a}.music h3{font-family:"Great Vibes",cursive;font-size:52px;font-weight:400}.music p{line-height:1.8;opacity:.9}.music-note{font-size:48px;margin:10px}audio{width:100%;margin-top:20px}.note{font-size:12px;opacity:.75;margin-top:10px}
-.final{min-height:80vh;background:linear-gradient(145deg,#7a1739,#b32b55);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:35px}.final h2{font-family:"Great Vibes",cursive;font-size:78px;font-weight:400}.final p{max-width:650px;line-height:2;margin:15px auto}.secret{display:none;margin:28px auto 0;max-width:650px;line-height:2.1;font-size:17px}
-footer{text-align:center;padding:25px;background:#581126;color:#fbdce5;font-size:12px}
-@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
-@media(max-width:720px){.story{grid-template-columns:1fr}.reasons{grid-template-columns:1fr}section{padding:65px 18px}.card{padding:25px}.final h2{font-size:60px}}
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff7f8;
+    color: #45242d;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+a,
+audio {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    touch-action: manipulation;
+}
+
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+#hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    opacity: .7;
+    animation: float linear forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes float {
+    to {
+        transform:
+            translate3d(0, -115vh, 0)
+            rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        max(28px, env(safe-area-inset-top))
+        20px
+        max(40px, env(safe-area-inset-bottom));
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #ffffff 0%,
+            #ffe8ee 48%,
+            #f5b6c7 100%
+        );
+
+    position: relative;
+    isolation: isolate;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hero::before {
+    width: 220px;
+    height: 220px;
+    background: rgba(255,255,255,.35);
+    top: -80px;
+    left: -90px;
+}
+
+.hero::after {
+    width: 260px;
+    height: 260px;
+    background: rgba(255,255,255,.25);
+    bottom: -120px;
+    right: -100px;
+}
+
+.hero-card {
+    width: 100%;
+    max-width: 720px;
+    animation: up 1s ease both;
+}
+
+.kicker {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 1.6;
+    opacity: .7;
+}
+
+.hero h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(72px, 24vw, 145px);
+    line-height: .95;
+    font-weight: 400;
+    color: #b32b55;
+    margin: 16px 0 18px;
+}
+
+.hero p {
+    width: 100%;
+    max-width: 580px;
+    margin: auto;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    margin-top: 26px;
+    padding: 13px 23px;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: #b32b55;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(143,31,67,.16);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.btn:active {
+    transform: scale(.96);
+}
+
+@media (hover:hover) {
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow:
+            0 16px 35px rgba(143,31,67,.24);
+    }
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding:
+        70px 18px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.title h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(48px, 15vw, 60px);
+    line-height: 1.05;
+    font-weight: 400;
+    color: #b32b55;
+}
+
+.title p {
+    margin-top: 8px;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    opacity: .65;
+}
+
+
+/* =========================================================
+   CARD / LETTER
+========================================================= */
+
+.card {
+    background: #fff;
+
+    border-radius: 22px;
+
+    padding: 24px 20px;
+
+    box-shadow:
+        0 15px 45px rgba(125,39,56,.08);
+}
+
+.letter {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.letter p {
+    margin-bottom: 15px;
+}
+
+.letter p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+}
+
+.story img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 24px;
+
+    display: block;
+
+    box-shadow:
+        0 18px 45px rgba(125,39,56,.14);
+}
+
+.story-text {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.story-text h3 {
+    font-size: 25px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.date {
+    display: inline-flex;
+
+    background: #ffe0e7;
+    color: #a32149;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    margin-bottom: 13px;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+    border-left: 2px solid #e9a4b6;
+
+    margin-left: 8px;
+
+    padding-left: 18px;
+}
+
+.event {
+    position: relative;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    padding: 18px 17px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(125,39,56,.07);
+}
+
+.event::before {
+    content: "";
+
+    position: absolute;
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #b32b55;
+
+    border: 3px solid #fff0f3;
+
+    left: -25px;
+    top: 21px;
+}
+
+.event:last-child {
+    margin-bottom: 0;
+}
+
+.event b {
+    display: block;
+
+    color: #b32b55;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    margin-bottom: 5px;
+}
+
+.event p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   REASONS
+========================================================= */
+
+.reasons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.reason {
+    background: #fff;
+
+    border-radius: 20px;
+
+    padding: 22px 16px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(125,39,56,.07);
+}
+
+.emoji {
+    font-size: 31px;
+    margin-bottom: 8px;
+}
+
+.reason b {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.reason p {
+    font-size: 12px;
+    line-height: 1.75;
+    opacity: .78;
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music {
+    background:
+        linear-gradient(
+            145deg,
+            #8e1f45,
+            #c53d67
+        );
+
+    color: #fff;
+
+    border-radius: 24px;
+
+    padding: 28px 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(125,39,56,.18);
+}
+
+.music-note {
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 7px;
+}
+
+.music h3 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 50px;
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+.music > p:not(.note) {
+    font-size: 13px;
+    opacity: .9;
+}
+
+.music .note {
+    font-size: 10px;
+    line-height: 1.7;
+    opacity: .72;
+
+    margin-top: 12px;
+}
+
+audio {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final {
+    width: 100%;
+    max-width: none;
+
+    min-height: 80svh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #b32b55,
+            #7a1739
+        );
+
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        70px 20px
+        max(70px, env(safe-area-inset-bottom));
+}
+
+.final > div {
+    width: 100%;
+    max-width: 700px;
+}
+
+.final .kicker {
+    opacity: .75;
+}
+
+.final h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(54px, 17vw, 78px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin: 15px 0;
+}
+
+.final p {
+    max-width: 600px;
+
+    margin: auto;
+
+    font-size: 14px;
+    line-height: 1.9;
+
+    opacity: .92;
+}
+
+.final .btn {
+    background: #fff;
+    color: #a32149;
+
+    margin-top: 25px;
+}
+
+.secret {
+    display: none;
+
+    margin: 25px auto 0;
+
+    max-width: 620px;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    animation: fadeIn .7s ease both;
+}
+
+.secret span {
+    display: inline-block;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 48px;
+
+    line-height: 1.2;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    text-align: center;
+
+    padding:
+        20px 15px
+        max(20px, env(safe-area-inset-bottom));
+
+    background: #581126;
+
+    color: #fbdce5;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+    section {
+        padding:
+            60px 16px;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .story img {
+        aspect-ratio: 16 / 11;
+    }
+
+    .story-text {
+        text-align: left;
+    }
+
+    .story-text h3 {
+        font-size: 23px;
+    }
+
+    .reasons {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .reason {
+        display: grid;
+
+        grid-template-columns: 50px 1fr;
+
+        column-gap: 10px;
+
+        text-align: left;
+
+        align-items: center;
+
+        padding: 17px;
+    }
+
+    .emoji {
+        grid-row: span 2;
+
+        font-size: 30px;
+
+        margin: 0;
+
+        text-align: center;
+    }
+
+    .reason b {
+        margin: 0;
+    }
+
+    .reason p {
+        margin-top: 2px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .hero {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .hero h1 {
+        font-size: 76px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .card {
+        padding: 21px 17px;
+    }
+
+    .letter {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .title {
+        margin-bottom: 27px;
+    }
+
+    .title h2 {
+        font-size: 48px;
+    }
+
+    .title p {
+        font-size: 11px;
+    }
+
+    .timeline {
+        margin-left: 5px;
+        padding-left: 16px;
+    }
+
+    .event {
+        padding: 16px 14px;
+    }
+
+    .event::before {
+        left: -23px;
+    }
+
+    .music {
+        padding: 25px 16px;
+    }
+
+    .music h3 {
+        font-size: 46px;
+    }
+
+    .final h2 {
+        font-size: 56px;
+    }
+
+    .secret span {
+        font-size: 43px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
 </style>
 </head>
+
 <body>
-<div id="hearts"></div>
-<header class="hero"><div class="hero-card">
-<div class="kicker">20 Agustus 2026 · dibuat khusus untuk</div>
-<h1>Lulu ❤️</h1>
-<p>Ada satu cerita yang mungkin sederhana, tapi buat aku sangat berarti. Jadi hari ini, aku ingin menyimpannya dalam sebuah tempat kecil yang hanya dibuat untuk kamu.</p>
-<a href="#surat" class="btn">Buka suratku 💌</a>
-</div></header>
 
-<section id="surat"><div class="title"><h2>Untuk Lulu, Sayangku</h2><p>Baca pelan-pelan ya ❤️</p></div>
-<div class="card letter">
-<p>Sayangku Lulu...</p>
-<p>Kadang aku masih suka senyum sendiri kalau mengingat bagaimana awal cerita kita. Dulu, pertama kali aku melihat kamu adalah di acara pernikahan kakak perempuanmu. Kebetulan suaminya adalah sepupuku.</p>
-<p>Saat itu aku hanya bisa mengagumi kamu dari jauh. Bukan karena aku tidak ingin mengenal kamu, tapi karena aku tahu saat itu kamu sudah punya seseorang. Jadi aku memilih untuk menyimpan rasa kagum itu sendiri.</p>
-<p>Sampai akhirnya waktu membawa kita ke cerita yang berbeda. Saat kamu sudah sendiri, kita mulai bisa berkomunikasi lebih dekat. Dari obrolan-obrolan kecil, rasa nyaman itu tumbuh. Sampai akhirnya kita sama-sama berani mengungkapkan perasaan.</p>
-<p>Dan tanpa terasa, sejak <b>1 Juli 2026</b>, kita punya cerita kita sendiri.</p>
-<p>Aku tidak tahu akan seperti apa perjalanan kita ke depannya. Tapi aku tahu satu hal: aku bersyukur pernah bertemu kamu, dan aku ingin menjaga apa yang sekarang kita punya.</p>
-<p>Kalau nanti ada hari yang tidak mudah, semoga kita tidak cepat menyerah. Kalau ada salah paham, semoga kita memilih bicara. Dan kalau ada banyak hal baik, semoga kita selalu ingat untuk mensyukurinya bersama.</p>
-<p><b>Terima kasih sudah memilih untuk berjalan bersamaku, Lulu. ❤️</b></p>
-<p>— Dari seseorang yang awalnya hanya bisa mengagumimu dari jauh, dan sekarang bisa memanggilmu sayang.</p>
-</div></section>
+<div id="hearts" aria-hidden="true"></div>
 
-<section><div class="title"><h2>Awal Cerita Kita</h2><p>Dari kagum diam-diam menjadi sebuah cerita.</p></div>
-<div class="story"><img src="foto/kenangan-1.jpg" alt="Kenangan kita">
-<div class="story-text"><span class="date">1 Juli 2026</span><h3 style="font-size:27px;margin-bottom:10px">Dulu hanya melihatmu...</h3>
-<p>Dan sekarang kita punya ruang untuk saling bercerita, saling mengungkapkan perasaan, dan membuat kenangan baru.</p>
-<p style="margin-top:12px">Foto ini mungkin hanya satu foto. Tapi buatku, ia menjadi bagian dari cerita yang ingin selalu aku ingat.</p></div></div></section>
 
-<section><div class="title"><h2>Perjalanan Kita</h2><p>Sedikit dari cerita yang ingin aku simpan.</p></div>
-<div class="timeline">
-<div class="event"><b>Pertama kali melihatmu 👀</b><p>Di acara pernikahan kakak perempuanmu. Saat itu aku hanya mengagumimu dari jauh.</p></div>
-<div class="event"><b>Mulai berkomunikasi 💬</b><p>Waktu akhirnya memberi kita kesempatan untuk saling mengenal lebih dekat.</p></div>
-<div class="event"><b>Saling mengungkapkan perasaan ❤️</b><p>Rasa yang awalnya hanya disimpan akhirnya bisa kita ungkapkan satu sama lain.</p></div>
-<div class="event"><b>1 Juli 2026 💕</b><p>Hari yang menjadi awal cerita kita sebagai pasangan.</p></div>
-<div class="event"><b>20 Agustus 2026 🌙</b><p>Hari ini. Ceritanya masih berjalan, dan semoga masih panjang.</p></div>
-</div></section>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<section><div class="title"><h2>Kenapa Kamu Spesial?</h2><p>Karena kamu bukan sekadar seseorang yang aku temui.</p></div>
-<div class="reasons">
-<div class="reason"><div class="emoji">🥰</div><b>Senyummu</b><p>Melihat kamu tersenyum selalu membuat hati terasa lebih ringan.</p></div>
-<div class="reason"><div class="emoji">🤍</div><b>Caramu menjadi dirimu</b><p>Aku suka kamu bukan karena kamu harus menjadi sempurna, tapi karena kamu menjadi Lulu.</p></div>
-<div class="reason"><div class="emoji">🫶</div><b>Kehadiranmu</b><p>Dari seseorang yang dulu hanya aku kagumi, sekarang kamu menjadi seseorang yang ingin aku jaga.</p></div>
-</div></section>
+<header class="hero">
 
-<section><div class="title"><h2>Lagu Untuk Kita 🎵</h2><p>Biarkan lagu ini menemani kamu membaca.</p></div>
-<div class="music"><div class="music-note">🎶</div><h3>Lestari</h3><p>Niken Salindry</p>
-<p class="note">Tambahkan file audio yang kamu punya secara legal dengan nama <b>lestari.mp3</b> ke folder <b>musik</b> agar pemutar di bawah bisa digunakan.</p>
-<audio controls><source src="musik/lestari.mp3" type="audio/mpeg"></audio></div></section>
+    <div class="hero-card">
 
-<section class="final"><div><div class="kicker">Satu pesan terakhir untukmu</div>
-<h2>Lulu, jangan pergi dulu ❤️</h2>
-<p>Kalau kamu sudah sampai di bagian ini, berarti kamu sudah membaca cerita kecil yang aku buat khusus untuk kamu.</p>
-<button class="btn" onclick="surprise()">Klik kalau kamu sayang aku 🥺</button>
-<div id="secret" class="secret"><b>Lulu...</b><br>Aku mungkin tidak selalu bisa memberikan hal-hal yang luar biasa. Tapi aku ingin, sebisaku, membuat kamu merasa bahwa kamu berarti.<br><br>
-Terima kasih karena dari sekian banyak kemungkinan yang ada, kita dipertemukan pada waktu yang tepat.<br><br>
-Dulu aku cuma bisa mengagumi kamu dari jauh. Sekarang aku bisa bilang langsung:<br>
-<span style="font-family:'Great Vibes',cursive;font-size:50px">Aku sayang kamu. ❤️</span><br>
-Semoga 1 Juli 2026 bukan hanya sebuah tanggal, tapi menjadi awal dari banyak tanggal indah yang akan kita lewati bersama.</div>
-</div></section>
-<footer>Dibuat dengan penuh rasa sayang · Untuk Lulu ❤️ · 20.08.2026</footer>
+        <div class="kicker">
+            20 Agustus 2026 · dibuat khusus untuk
+        </div>
+
+        <h1>Lulu ❤️</h1>
+
+        <p>
+            Ada satu cerita yang mungkin sederhana,
+            tapi buat aku sangat berarti.
+            Jadi hari ini, aku ingin menyimpannya
+            dalam sebuah tempat kecil yang hanya dibuat
+            untuk kamu.
+        </p>
+
+        <a href="#surat" class="btn">
+            Buka suratku 💌
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     SURAT
+===================================================== -->
+
+<section id="surat">
+
+    <div class="title">
+
+        <h2>Untuk Lulu, Sayangku</h2>
+
+        <p>
+            Baca pelan-pelan ya ❤️
+        </p>
+
+    </div>
+
+    <div class="card letter">
+
+        <p>
+            Sayangku Lulu...
+        </p>
+
+        <p>
+            Kadang aku masih suka senyum sendiri kalau
+            mengingat bagaimana awal cerita kita.
+            Dulu, pertama kali aku melihat kamu adalah
+            di acara pernikahan kakak perempuanmu.
+            Kebetulan suaminya adalah sepupuku.
+        </p>
+
+        <p>
+            Saat itu aku hanya bisa mengagumi kamu dari jauh.
+            Bukan karena aku tidak ingin mengenal kamu,
+            tapi karena aku tahu saat itu kamu sudah punya
+            seseorang. Jadi aku memilih untuk menyimpan
+            rasa kagum itu sendiri.
+        </p>
+
+        <p>
+            Sampai akhirnya waktu membawa kita ke cerita
+            yang berbeda. Saat kamu sudah sendiri,
+            kita mulai bisa berkomunikasi lebih dekat.
+            Dari obrolan-obrolan kecil, rasa nyaman itu
+            tumbuh. Sampai akhirnya kita sama-sama berani
+            mengungkapkan perasaan.
+        </p>
+
+        <p>
+            Dan tanpa terasa, sejak
+            <b>1 Juli 2026</b>,
+            kita punya cerita kita sendiri.
+        </p>
+
+        <p>
+            Aku tidak tahu akan seperti apa perjalanan kita
+            ke depannya. Tapi aku tahu satu hal:
+            aku bersyukur pernah bertemu kamu,
+            dan aku ingin menjaga apa yang sekarang
+            kita punya.
+        </p>
+
+        <p>
+            Kalau nanti ada hari yang tidak mudah,
+            semoga kita tidak cepat menyerah.
+            Kalau ada salah paham, semoga kita memilih bicara.
+            Dan kalau ada banyak hal baik,
+            semoga kita selalu ingat untuk mensyukurinya
+            bersama.
+        </p>
+
+        <p>
+            <b>
+                Terima kasih sudah memilih untuk berjalan
+                bersamaku, Lulu. ❤️
+            </b>
+        </p>
+
+        <p>
+            — Dari seseorang yang awalnya hanya bisa
+            mengagumimu dari jauh, dan sekarang bisa
+            memanggilmu sayang.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AWAL CERITA
+===================================================== -->
+
+<section>
+
+    <div class="title">
+
+        <h2>Awal Cerita Kita</h2>
+
+        <p>
+            Dari kagum diam-diam menjadi sebuah cerita.
+        </p>
+
+    </div>
+
+    <div class="story">
+
+        <img
+            src="foto/kenangan-1.jpg"
+            alt="Kenangan kita"
+            loading="lazy"
+        >
+
+        <div class="story-text">
+
+            <span class="date">
+                1 Juli 2026
+            </span>
+
+            <h3>
+                Dulu hanya melihatmu...
+            </h3>
+
+            <p>
+                Dan sekarang kita punya ruang untuk
+                saling bercerita, saling mengungkapkan
+                perasaan, dan membuat kenangan baru.
+            </p>
+
+            <p style="margin-top:12px">
+                Foto ini mungkin hanya satu foto.
+                Tapi buatku, ia menjadi bagian dari cerita
+                yang ingin selalu aku ingat.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TIMELINE
+===================================================== -->
+
+<section>
+
+    <div class="title">
+
+        <h2>Perjalanan Kita</h2>
+
+        <p>
+            Sedikit dari cerita yang ingin aku simpan.
+        </p>
+
+    </div>
+
+    <div class="timeline">
+
+        <div class="event">
+
+            <b>
+                Pertama kali melihatmu 👀
+            </b>
+
+            <p>
+                Di acara pernikahan kakak perempuanmu.
+                Saat itu aku hanya mengagumimu dari jauh.
+            </p>
+
+        </div>
+
+        <div class="event">
+
+            <b>
+                Mulai berkomunikasi 💬
+            </b>
+
+            <p>
+                Waktu akhirnya memberi kita kesempatan
+                untuk saling mengenal lebih dekat.
+            </p>
+
+        </div>
+
+        <div class="event">
+
+            <b>
+                Saling mengungkapkan perasaan ❤️
+            </b>
+
+            <p>
+                Rasa yang awalnya hanya disimpan akhirnya
+                bisa kita ungkapkan satu sama lain.
+            </p>
+
+        </div>
+
+        <div class="event">
+
+            <b>
+                1 Juli 2026 💕
+            </b>
+
+            <p>
+                Hari yang menjadi awal cerita kita
+                sebagai pasangan.
+            </p>
+
+        </div>
+
+        <div class="event">
+
+            <b>
+                20 Agustus 2026 🌙
+            </b>
+
+            <p>
+                Hari ini. Ceritanya masih berjalan,
+                dan semoga masih panjang.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ALASAN
+===================================================== -->
+
+<section>
+
+    <div class="title">
+
+        <h2>Kenapa Kamu Spesial?</h2>
+
+        <p>
+            Karena kamu bukan sekadar seseorang
+            yang aku temui.
+        </p>
+
+    </div>
+
+    <div class="reasons">
+
+        <div class="reason">
+
+            <div class="emoji">
+                🥰
+            </div>
+
+            <b>
+                Senyummu
+            </b>
+
+            <p>
+                Melihat kamu tersenyum selalu membuat
+                hati terasa lebih ringan.
+            </p>
+
+        </div>
+
+        <div class="reason">
+
+            <div class="emoji">
+                🤍
+            </div>
+
+            <b>
+                Caramu menjadi dirimu
+            </b>
+
+            <p>
+                Aku suka kamu bukan karena kamu harus
+                menjadi sempurna, tapi karena kamu
+                menjadi Lulu.
+            </p>
+
+        </div>
+
+        <div class="reason">
+
+            <div class="emoji">
+                🫶
+            </div>
+
+            <b>
+                Kehadiranmu
+            </b>
+
+            <p>
+                Dari seseorang yang dulu hanya aku kagumi,
+                sekarang kamu menjadi seseorang
+                yang ingin aku jaga.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MUSIK
+===================================================== -->
+
+<section>
+
+    <div class="title">
+
+        <h2>Lagu Untuk Kita 🎵</h2>
+
+        <p>
+            Biarkan lagu ini menemani kamu membaca.
+        </p>
+
+    </div>
+
+    <div class="music">
+
+        <div class="music-note">
+            🎶
+        </div>
+
+        <h3>
+            Lestari
+        </h3>
+
+        <p>
+            Niken Salindry
+        </p>
+
+        <p class="note">
+            Tambahkan file audio yang kamu punya secara legal
+            dengan nama <b>lestari.mp3</b> ke folder
+            <b>musik</b>.
+        </p>
+
+        <audio controls preload="metadata">
+
+            <source
+                src="musik/lestari.mp3"
+                type="audio/mpeg"
+            >
+
+            Browser kamu tidak mendukung audio.
+
+        </audio>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+    <div>
+
+        <div class="kicker">
+            Satu pesan terakhir untukmu
+        </div>
+
+        <h2>
+            Lulu, jangan pergi dulu ❤️
+        </h2>
+
+        <p>
+            Kalau kamu sudah sampai di bagian ini,
+            berarti kamu sudah membaca cerita kecil
+            yang aku buat khusus untuk kamu.
+        </p>
+
+        <button
+            class="btn"
+            type="button"
+            onclick="surprise()"
+        >
+            Klik kalau kamu sayang aku 🥺
+        </button>
+
+        <div
+            id="secret"
+            class="secret"
+        >
+
+            <b>Lulu...</b>
+
+            <br>
+
+            Aku mungkin tidak selalu bisa memberikan
+            hal-hal yang luar biasa. Tapi aku ingin,
+            sebisaku, membuat kamu merasa bahwa
+            kamu berarti.
+
+            <br><br>
+
+            Terima kasih karena dari sekian banyak
+            kemungkinan yang ada, kita dipertemukan
+            pada waktu yang tepat.
+
+            <br><br>
+
+            Dulu aku cuma bisa mengagumi kamu dari jauh.
+            Sekarang aku bisa bilang langsung:
+
+            <br>
+
+            <span>
+                Aku sayang kamu. ❤️
+            </span>
+
+            <br>
+
+            Semoga 1 Juli 2026 bukan hanya sebuah tanggal,
+            tapi menjadi awal dari banyak tanggal indah
+            yang akan kita lewati bersama.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    Dibuat dengan penuh rasa sayang ·
+    Untuk Lulu ❤️ · 20.08.2026
+</footer>
+
+
 <script>
-function heart(){const h=document.createElement('div');h.className='heart';h.textContent=['❤️','💕','💗','💖','💘'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(14+Math.random()*24)+'px';h.style.animationDuration=(5+Math.random()*5)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),10000)}
-setInterval(heart,650);
-function surprise(){document.getElementById('secret').style.display='block';for(let i=0;i<35;i++)setTimeout(heart,i*55)}
+
+/* =========================================================
+   HEART EFFECT
+========================================================= */
+
+const heartsContainer =
+    document.getElementById("hearts");
+
+const heartSymbols = [
+    "❤️",
+    "💕",
+    "💗",
+    "💖",
+    "💘"
+];
+
+let heartInterval;
+
+
+/*
+ * Membuat satu hati
+ */
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.textContent =
+        heartSymbols[
+            Math.floor(
+                Math.random() *
+                heartSymbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        13 + Math.random() * 19 + "px";
+
+    heart.style.animationDuration =
+        5 + Math.random() * 4 + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+
+/*
+ * Efek hati dibuat lebih ringan
+ * agar HP tidak terlalu terbebani.
+ */
+heartInterval =
+    setInterval(createHeart, 950);
+
+
+/* =========================================================
+   SURPRISE
+========================================================= */
+
+let surpriseOpened = false;
+
+function surprise() {
+
+    const secret =
+        document.getElementById("secret");
+
+    if (surpriseOpened) {
+        return;
+    }
+
+    surpriseOpened = true;
+
+    secret.style.display = "block";
+
+    /*
+     * Ledakan hati hanya sekali.
+     */
+    for (let i = 0; i < 25; i++) {
+
+        setTimeout(() => {
+            createHeart();
+        }, i * 60);
+
+    }
+
+}
+
+
+/* =========================================================
+   STOP HEARTS WHEN PAGE IS HIDDEN
+   Menghemat baterai HP.
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    () => {
+
+        if (document.hidden) {
+
+            clearInterval(heartInterval);
+
+        } else {
+
+            heartInterval =
+                setInterval(createHeart, 950);
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   PREVENT ACCIDENTAL AUDIO AUTOPLAY
+========================================================= */
+
+const audio =
+    document.querySelector("audio");
+
+if (audio) {
+
+    audio.volume = 0.8;
+
+}
+
 </script>
-</body></html>
+
+</body>
+</html>
