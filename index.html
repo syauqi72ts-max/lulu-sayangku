@@ -2,11 +2,13 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <meta name="theme-color" content="#b32b55">
-<meta name="description" content="Sebuah cerita kecil untuk Lulu ❤️">
+<meta name="description"
+      content="Sebuah cerita kecil yang dibuat khusus untuk Lulu ❤️">
 
 <title>Untuk Lulu ❤️</title>
 
@@ -16,7 +18,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet">
 
+
 <style>
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -43,6 +47,7 @@ body {
 }
 
 img {
+    display: block;
     max-width: 100%;
 }
 
@@ -66,25 +71,28 @@ a {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 50;
     overflow: hidden;
+    z-index: 100;
 }
 
 .heart {
     position: absolute;
     bottom: -50px;
     opacity: .7;
-    animation: float linear forwards;
+    animation: floatHeart linear forwards;
     will-change: transform, opacity;
 }
 
-@keyframes float {
+@keyframes floatHeart {
+
     to {
         transform:
             translate3d(0, -115vh, 0)
             rotate(360deg);
+
         opacity: 0;
     }
+
 }
 
 
@@ -93,113 +101,153 @@ a {
 ========================================================= */
 
 .hero {
+
     min-height: 100svh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    padding:
+        max(30px, env(safe-area-inset-top))
+        20px
+        max(45px, env(safe-area-inset-bottom));
+
     text-align: center;
 
-    padding:
-        max(28px, env(safe-area-inset-top))
-        20px
-        max(40px, env(safe-area-inset-bottom));
+    position: relative;
+    overflow: hidden;
 
     background:
         radial-gradient(
             circle at 50% 10%,
             #ffffff 0%,
-            #ffe8ee 48%,
+            #ffe8ee 45%,
             #f5b6c7 100%
         );
-
-    position: relative;
-    isolation: isolate;
-}
-
-.hero::before,
-.hero::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: -1;
 }
 
 .hero::before {
-    width: 220px;
-    height: 220px;
+
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
     background: rgba(255,255,255,.35);
-    top: -80px;
-    left: -90px;
+
+    top: -100px;
+    left: -100px;
 }
 
 .hero::after {
-    width: 260px;
-    height: 260px;
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
     background: rgba(255,255,255,.25);
-    bottom: -120px;
-    right: -100px;
+
+    right: -130px;
+    bottom: -130px;
 }
 
 .hero-card {
+
     width: 100%;
     max-width: 720px;
-    animation: up 1s ease both;
+
+    position: relative;
+    z-index: 2;
+
+    animation: fadeUp 1s ease both;
 }
 
 .kicker {
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     font-size: 10px;
+
     line-height: 1.6;
+
     opacity: .7;
 }
 
 .hero h1 {
+
     font-family: "Great Vibes", cursive;
-    font-size: clamp(72px, 24vw, 145px);
-    line-height: .95;
+
+    font-size: clamp(75px, 24vw, 145px);
+
     font-weight: 400;
+
+    line-height: .95;
+
     color: #b32b55;
+
     margin: 16px 0 18px;
 }
 
 .hero p {
-    width: 100%;
+
     max-width: 580px;
+
     margin: auto;
 
     font-size: 14px;
+
     line-height: 1.9;
 }
 
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
 .btn {
+
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     min-height: 50px;
 
-    margin-top: 26px;
-    padding: 13px 23px;
+    margin-top: 27px;
+
+    padding: 13px 24px;
 
     border: 0;
     border-radius: 999px;
 
     background: #b32b55;
+
     color: #fff;
 
     font-family: inherit;
+
     font-size: 14px;
+
     font-weight: 600;
 
     text-decoration: none;
+
     cursor: pointer;
 
     box-shadow:
-        0 12px 30px rgba(143,31,67,.16);
+        0 12px 30px rgba(143,31,67,.18);
 
     transition:
         transform .25s ease,
@@ -211,11 +259,15 @@ a {
 }
 
 @media (hover:hover) {
+
     .btn:hover {
+
         transform: translateY(-3px);
+
         box-shadow:
-            0 16px 35px rgba(143,31,67,.24);
+            0 17px 38px rgba(143,31,67,.25);
     }
+
 }
 
 
@@ -224,32 +276,42 @@ a {
 ========================================================= */
 
 section {
+
     width: 100%;
+
     max-width: 1000px;
 
     margin: auto;
 
-    padding:
-        70px 18px;
+    padding: 70px 18px;
 }
 
 .title {
+
     text-align: center;
-    margin-bottom: 32px;
+
+    margin-bottom: 34px;
 }
 
 .title h2 {
+
     font-family: "Great Vibes", cursive;
-    font-size: clamp(48px, 15vw, 60px);
-    line-height: 1.05;
+
+    font-size: clamp(48px, 15vw, 62px);
+
     font-weight: 400;
+
+    line-height: 1.05;
+
     color: #b32b55;
 }
 
 .title p {
+
     margin-top: 8px;
 
     font-size: 12px;
+
     line-height: 1.7;
 
     opacity: .65;
@@ -257,30 +319,35 @@ section {
 
 
 /* =========================================================
-   CARD / LETTER
+   LETTER
 ========================================================= */
 
 .card {
+
     background: #fff;
 
-    border-radius: 22px;
+    border-radius: 24px;
 
-    padding: 24px 20px;
+    padding: 26px 21px;
 
     box-shadow:
         0 15px 45px rgba(125,39,56,.08);
 }
 
 .letter {
+
     font-size: 14px;
+
     line-height: 1.9;
 }
 
 .letter p {
+
     margin-bottom: 15px;
 }
 
 .letter p:last-child {
+
     margin-bottom: 0;
 }
 
@@ -290,41 +357,52 @@ section {
 ========================================================= */
 
 .story {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
+
+    gap: 30px;
+
     align-items: center;
 }
 
 .story img {
+
     width: 100%;
+
     aspect-ratio: 4 / 5;
 
     object-fit: cover;
 
-    border-radius: 24px;
-
-    display: block;
+    border-radius: 25px;
 
     box-shadow:
-        0 18px 45px rgba(125,39,56,.14);
+        0 18px 45px rgba(125,39,56,.15);
 }
 
 .story-text {
+
     font-size: 14px;
+
     line-height: 1.9;
 }
 
 .story-text h3 {
+
     font-size: 25px;
+
     line-height: 1.35;
+
     margin-bottom: 10px;
 }
 
 .date {
+
     display: inline-flex;
 
     background: #ffe0e7;
+
     color: #a32149;
 
     padding: 6px 12px;
@@ -332,6 +410,7 @@ section {
     border-radius: 999px;
 
     font-size: 11px;
+
     font-weight: 600;
 
     margin-bottom: 13px;
@@ -343,6 +422,7 @@ section {
 ========================================================= */
 
 .timeline {
+
     border-left: 2px solid #e9a4b6;
 
     margin-left: 8px;
@@ -351,21 +431,23 @@ section {
 }
 
 .event {
+
     position: relative;
 
     background: #fff;
 
-    border-radius: 18px;
+    border-radius: 19px;
 
-    padding: 18px 17px;
+    padding: 19px 17px;
 
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 
     box-shadow:
         0 10px 30px rgba(125,39,56,.07);
 }
 
 .event::before {
+
     content: "";
 
     position: absolute;
@@ -380,26 +462,32 @@ section {
     border: 3px solid #fff0f3;
 
     left: -25px;
-    top: 21px;
+
+    top: 22px;
 }
 
 .event:last-child {
+
     margin-bottom: 0;
 }
 
 .event b {
+
     display: block;
 
     color: #b32b55;
 
     font-size: 14px;
+
     line-height: 1.5;
 
     margin-bottom: 5px;
 }
 
 .event p {
+
     font-size: 13px;
+
     line-height: 1.8;
 }
 
@@ -409,6 +497,7 @@ section {
 ========================================================= */
 
 .reasons {
+
     display: grid;
 
     grid-template-columns:
@@ -418,11 +507,12 @@ section {
 }
 
 .reason {
+
     background: #fff;
 
-    border-radius: 20px;
+    border-radius: 21px;
 
-    padding: 22px 16px;
+    padding: 23px 16px;
 
     text-align: center;
 
@@ -431,11 +521,14 @@ section {
 }
 
 .emoji {
-    font-size: 31px;
-    margin-bottom: 8px;
+
+    font-size: 32px;
+
+    margin-bottom: 9px;
 }
 
 .reason b {
+
     display: block;
 
     font-size: 14px;
@@ -444,8 +537,11 @@ section {
 }
 
 .reason p {
+
     font-size: 12px;
+
     line-height: 1.75;
+
     opacity: .78;
 }
 
@@ -455,6 +551,7 @@ section {
 ========================================================= */
 
 .music {
+
     background:
         linear-gradient(
             145deg,
@@ -464,9 +561,9 @@ section {
 
     color: #fff;
 
-    border-radius: 24px;
+    border-radius: 25px;
 
-    padding: 28px 20px;
+    padding: 30px 20px;
 
     text-align: center;
 
@@ -475,40 +572,57 @@ section {
 }
 
 .music-note {
-    font-size: 38px;
+
+    font-size: 40px;
+
     line-height: 1;
-    margin-bottom: 7px;
+
+    margin-bottom: 8px;
 }
 
 .music h3 {
+
     font-family: "Great Vibes", cursive;
 
-    font-size: 50px;
-
-    line-height: 1;
+    font-size: 52px;
 
     font-weight: 400;
+
+    line-height: 1;
 }
 
 .music > p:not(.note) {
+
     font-size: 13px;
+
     opacity: .9;
 }
 
 .music .note {
+
     font-size: 10px;
+
     line-height: 1.7;
+
     opacity: .72;
 
     margin-top: 12px;
 }
 
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
 audio {
+
     display: block;
 
     width: 100%;
 
-    margin-top: 18px;
+    max-width: 600px;
+
+    margin: 20px auto 0;
 
     border-radius: 999px;
 }
@@ -519,22 +633,17 @@ audio {
 ========================================================= */
 
 .final {
+
     width: 100%;
+
     max-width: none;
 
     min-height: 80svh;
 
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            #b32b55,
-            #7a1739
-        );
-
-    color: #fff;
-
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -542,53 +651,64 @@ audio {
     padding:
         70px 20px
         max(70px, env(safe-area-inset-bottom));
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #b32b55,
+            #7a1739
+        );
 }
 
 .final > div {
+
     width: 100%;
+
     max-width: 700px;
 }
 
-.final .kicker {
-    opacity: .75;
-}
-
 .final h2 {
+
     font-family: "Great Vibes", cursive;
 
-    font-size: clamp(54px, 17vw, 78px);
+    font-size: clamp(55px, 17vw, 80px);
 
     font-weight: 400;
 
     line-height: 1;
 
-    margin: 15px 0;
+    margin: 16px 0;
 }
 
 .final p {
-    max-width: 600px;
+
+    max-width: 620px;
 
     margin: auto;
 
     font-size: 14px;
+
     line-height: 1.9;
 
     opacity: .92;
 }
 
 .final .btn {
-    background: #fff;
-    color: #a32149;
 
-    margin-top: 25px;
+    background: #fff;
+
+    color: #a32149;
 }
 
 .secret {
+
     display: none;
 
-    margin: 25px auto 0;
-
     max-width: 620px;
+
+    margin: 27px auto 0;
 
     font-size: 14px;
 
@@ -598,11 +718,12 @@ audio {
 }
 
 .secret span {
+
     display: inline-block;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: 48px;
+    font-size: 49px;
 
     line-height: 1.2;
 
@@ -615,6 +736,7 @@ audio {
 ========================================================= */
 
 footer {
+
     text-align: center;
 
     padding:
@@ -635,27 +757,41 @@ footer {
    ANIMATION
 ========================================================= */
 
-@keyframes up {
+@keyframes fadeUp {
+
     from {
+
         opacity: 0;
-        transform: translateY(25px);
+
+        transform:
+            translateY(25px);
     }
 
     to {
+
         opacity: 1;
-        transform: none;
+
+        transform:
+            translateY(0);
     }
 }
 
 @keyframes fadeIn {
+
     from {
+
         opacity: 0;
-        transform: translateY(12px);
+
+        transform:
+            translateY(12px);
     }
 
     to {
+
         opacity: 1;
-        transform: none;
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -667,61 +803,66 @@ footer {
 @media (max-width: 720px) {
 
     section {
+
         padding:
             60px 16px;
     }
 
     .story {
+
         grid-template-columns: 1fr;
+
         gap: 24px;
     }
 
     .story img {
+
         aspect-ratio: 16 / 11;
     }
 
-    .story-text {
-        text-align: left;
-    }
-
     .story-text h3 {
+
         font-size: 23px;
     }
 
     .reasons {
+
         grid-template-columns: 1fr;
+
         gap: 12px;
     }
 
     .reason {
+
         display: grid;
 
         grid-template-columns: 50px 1fr;
 
         column-gap: 10px;
 
-        text-align: left;
-
         align-items: center;
+
+        text-align: left;
 
         padding: 17px;
     }
 
     .emoji {
+
         grid-row: span 2;
 
-        font-size: 30px;
+        text-align: center;
 
         margin: 0;
-
-        text-align: center;
     }
 
     .reason b {
+
         margin: 0;
     }
 
     .reason p {
+
         margin-top: 2px;
     }
 }
@@ -734,70 +875,90 @@ footer {
 @media (max-width: 390px) {
 
     .hero {
+
         padding-left: 17px;
+
         padding-right: 17px;
     }
 
     .hero h1 {
+
         font-size: 76px;
     }
 
     .hero p {
+
         font-size: 13px;
     }
 
     .btn {
+
         width: 100%;
+
         max-width: 300px;
     }
 
     .card {
-        padding: 21px 17px;
+
+        padding: 22px 17px;
     }
 
     .letter {
+
         font-size: 13px;
+
         line-height: 1.85;
     }
 
     .title {
-        margin-bottom: 27px;
+
+        margin-bottom: 28px;
     }
 
     .title h2 {
+
         font-size: 48px;
     }
 
     .title p {
+
         font-size: 11px;
     }
 
     .timeline {
+
         margin-left: 5px;
+
         padding-left: 16px;
     }
 
     .event {
+
         padding: 16px 14px;
     }
 
     .event::before {
+
         left: -23px;
     }
 
     .music {
-        padding: 25px 16px;
+
+        padding: 26px 16px;
     }
 
     .music h3 {
-        font-size: 46px;
+
+        font-size: 47px;
     }
 
     .final h2 {
-        font-size: 56px;
+
+        font-size: 57px;
     }
 
     .secret span {
+
         font-size: 43px;
     }
 }
@@ -810,21 +971,32 @@ footer {
 @media (prefers-reduced-motion: reduce) {
 
     html {
+
         scroll-behavior: auto;
     }
 
     *,
     *::before,
     *::after {
+
         animation-duration: .01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: .01ms !important;
     }
 }
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- =====================================================
+     FLOATING HEARTS
+===================================================== -->
 
 <div id="hearts" aria-hidden="true"></div>
 
@@ -841,7 +1013,9 @@ footer {
             20 Agustus 2026 · dibuat khusus untuk
         </div>
 
-        <h1>Lulu ❤️</h1>
+        <h1>
+            Lulu ❤️
+        </h1>
 
         <p>
             Ada satu cerita yang mungkin sederhana,
@@ -851,7 +1025,10 @@ footer {
             untuk kamu.
         </p>
 
-        <a href="#surat" class="btn">
+        <a
+            href="#surat"
+            class="btn"
+        >
             Buka suratku 💌
         </a>
 
@@ -868,13 +1045,16 @@ footer {
 
     <div class="title">
 
-        <h2>Untuk Lulu, Sayangku</h2>
+        <h2>
+            Untuk Lulu, Sayangku
+        </h2>
 
         <p>
             Baca pelan-pelan ya ❤️
         </p>
 
     </div>
+
 
     <div class="card letter">
 
@@ -956,7 +1136,9 @@ footer {
 
     <div class="title">
 
-        <h2>Awal Cerita Kita</h2>
+        <h2>
+            Awal Cerita Kita
+        </h2>
 
         <p>
             Dari kagum diam-diam menjadi sebuah cerita.
@@ -964,13 +1146,15 @@ footer {
 
     </div>
 
+
     <div class="story">
 
         <img
-            src="foto/kenangan-1.jpg"
+            src="./foto/kenangan-1.jpg"
             alt="Kenangan kita"
             loading="lazy"
         >
+
 
         <div class="story-text">
 
@@ -1009,13 +1193,16 @@ footer {
 
     <div class="title">
 
-        <h2>Perjalanan Kita</h2>
+        <h2>
+            Perjalanan Kita
+        </h2>
 
         <p>
             Sedikit dari cerita yang ingin aku simpan.
         </p>
 
     </div>
+
 
     <div class="timeline">
 
@@ -1032,6 +1219,7 @@ footer {
 
         </div>
 
+
         <div class="event">
 
             <b>
@@ -1044,6 +1232,7 @@ footer {
             </p>
 
         </div>
+
 
         <div class="event">
 
@@ -1058,6 +1247,7 @@ footer {
 
         </div>
 
+
         <div class="event">
 
             <b>
@@ -1070,6 +1260,7 @@ footer {
             </p>
 
         </div>
+
 
         <div class="event">
 
@@ -1090,14 +1281,16 @@ footer {
 
 
 <!-- =====================================================
-     ALASAN
+     KENAPA SPESIAL
 ===================================================== -->
 
 <section>
 
     <div class="title">
 
-        <h2>Kenapa Kamu Spesial?</h2>
+        <h2>
+            Kenapa Kamu Spesial?
+        </h2>
 
         <p>
             Karena kamu bukan sekadar seseorang
@@ -1105,6 +1298,7 @@ footer {
         </p>
 
     </div>
+
 
     <div class="reasons">
 
@@ -1125,6 +1319,7 @@ footer {
 
         </div>
 
+
         <div class="reason">
 
             <div class="emoji">
@@ -1142,6 +1337,7 @@ footer {
             </p>
 
         </div>
+
 
         <div class="reason">
 
@@ -1174,13 +1370,16 @@ footer {
 
     <div class="title">
 
-        <h2>Lagu Untuk Kita 🎵</h2>
+        <h2>
+            Lagu Untuk Kita 🎵
+        </h2>
 
         <p>
             Biarkan lagu ini menemani kamu membaca.
         </p>
 
     </div>
+
 
     <div class="music">
 
@@ -1197,21 +1396,56 @@ footer {
         </p>
 
         <p class="note">
-            Tambahkan file audio yang kamu punya secara legal
-            dengan nama <b>lestari.mp3</b> ke folder
-            <b>musik</b>.
+            Lagu untuk menemani cerita kecil kita ❤️
         </p>
 
-        <audio controls preload="metadata">
+
+        <!--
+            FILE HARUS BERADA DI:
+
+            musik/lestari.mp3
+
+            Struktur:
+
+            lulu-sayangku/
+            ├── index.html
+            ├── foto/
+            │   └── kenangan-1.jpg
+            └── musik/
+                └── lestari.mp3
+        -->
+
+        <audio
+            id="musicPlayer"
+            controls
+            preload="metadata"
+            playsinline
+        >
 
             <source
-                src="musik/lestari.mp3"
+                src="./musik/lestari.mp3"
                 type="audio/mpeg"
             >
 
-            Browser kamu tidak mendukung audio.
+            Browser kamu tidak mendukung pemutar audio.
 
         </audio>
+
+
+        <p
+            id="musicError"
+            style="
+                display:none;
+                margin-top:12px;
+                color:#ffe0e8;
+                font-size:11px;
+            "
+        >
+            Musik belum dapat dimuat.
+            Pastikan file berada di folder
+            <b>musik</b> dengan nama
+            <b>lestari.mp3</b>.
+        </p>
 
     </div>
 
@@ -1219,7 +1453,7 @@ footer {
 
 
 <!-- =====================================================
-     FINAL
+     FINAL MESSAGE
 ===================================================== -->
 
 <section class="final">
@@ -1230,15 +1464,18 @@ footer {
             Satu pesan terakhir untukmu
         </div>
 
+
         <h2>
             Lulu, jangan pergi dulu ❤️
         </h2>
+
 
         <p>
             Kalau kamu sudah sampai di bagian ini,
             berarti kamu sudah membaca cerita kecil
             yang aku buat khusus untuk kamu.
         </p>
+
 
         <button
             class="btn"
@@ -1248,12 +1485,15 @@ footer {
             Klik kalau kamu sayang aku 🥺
         </button>
 
+
         <div
             id="secret"
             class="secret"
         >
 
-            <b>Lulu...</b>
+            <b>
+                Lulu...
+            </b>
 
             <br>
 
@@ -1293,15 +1533,17 @@ footer {
 
 
 <footer>
+
     Dibuat dengan penuh rasa sayang ·
     Untuk Lulu ❤️ · 20.08.2026
+
 </footer>
 
 
 <script>
 
 /* =========================================================
-   HEART EFFECT
+   FLOATING HEARTS
 ========================================================= */
 
 const heartsContainer =
@@ -1315,12 +1557,9 @@ const heartSymbols = [
     "💘"
 ];
 
-let heartInterval;
+let heartInterval = null;
 
 
-/*
- * Membuat satu hati
- */
 function createHeart() {
 
     const heart =
@@ -1340,25 +1579,52 @@ function createHeart() {
         Math.random() * 100 + "vw";
 
     heart.style.fontSize =
-        13 + Math.random() * 19 + "px";
+        (13 + Math.random() * 19) + "px";
 
     heart.style.animationDuration =
-        5 + Math.random() * 4 + "s";
+        (5 + Math.random() * 4) + "s";
 
     heartsContainer.appendChild(heart);
 
+
     setTimeout(() => {
+
         heart.remove();
+
     }, 10000);
 }
 
 
-/*
- * Efek hati dibuat lebih ringan
- * agar HP tidak terlalu terbebani.
- */
-heartInterval =
-    setInterval(createHeart, 950);
+/* =========================================================
+   HEART EFFECT
+========================================================= */
+
+function startHearts() {
+
+    if (heartInterval !== null) {
+        return;
+    }
+
+    heartInterval =
+        setInterval(
+            createHeart,
+            950
+        );
+}
+
+
+function stopHearts() {
+
+    if (heartInterval !== null) {
+
+        clearInterval(heartInterval);
+
+        heartInterval = null;
+    }
+}
+
+
+startHearts();
 
 
 /* =========================================================
@@ -1367,26 +1633,35 @@ heartInterval =
 
 let surpriseOpened = false;
 
+
 function surprise() {
 
     const secret =
         document.getElementById("secret");
 
+
     if (surpriseOpened) {
         return;
     }
 
+
     surpriseOpened = true;
 
-    secret.style.display = "block";
 
-    /*
-     * Ledakan hati hanya sekali.
-     */
-    for (let i = 0; i < 25; i++) {
+    secret.style.display =
+        "block";
+
+
+    for (
+        let i = 0;
+        i < 25;
+        i++
+    ) {
 
         setTimeout(() => {
+
             createHeart();
+
         }, i * 60);
 
     }
@@ -1395,8 +1670,7 @@ function surprise() {
 
 
 /* =========================================================
-   STOP HEARTS WHEN PAGE IS HIDDEN
-   Menghemat baterai HP.
+   SAVE BATTERY
 ========================================================= */
 
 document.addEventListener(
@@ -1405,12 +1679,11 @@ document.addEventListener(
 
         if (document.hidden) {
 
-            clearInterval(heartInterval);
+            stopHearts();
 
         } else {
 
-            heartInterval =
-                setInterval(createHeart, 950);
+            startHearts();
 
         }
 
@@ -1419,15 +1692,60 @@ document.addEventListener(
 
 
 /* =========================================================
-   PREVENT ACCIDENTAL AUDIO AUTOPLAY
+   MUSIC
 ========================================================= */
 
-const audio =
-    document.querySelector("audio");
+const musicPlayer =
+    document.getElementById("musicPlayer");
 
-if (audio) {
+const musicError =
+    document.getElementById("musicError");
 
-    audio.volume = 0.8;
+
+if (musicPlayer) {
+
+
+    /*
+     * Volume awal 80%.
+     */
+    musicPlayer.volume = 0.8;
+
+
+    /*
+     * Kalau audio gagal ditemukan
+     * atau gagal dimuat.
+     */
+    musicPlayer.addEventListener(
+        "error",
+        () => {
+
+            musicError.style.display =
+                "block";
+
+            console.error(
+                "Gagal memuat musik: ./musik/lestari.mp3"
+            );
+
+        }
+    );
+
+
+    /*
+     * Kalau audio berhasil ditemukan.
+     */
+    musicPlayer.addEventListener(
+        "loadedmetadata",
+        () => {
+
+            musicError.style.display =
+                "none";
+
+            console.log(
+                "Lestari.mp3 berhasil dimuat."
+            );
+
+        }
+    );
 
 }
 
